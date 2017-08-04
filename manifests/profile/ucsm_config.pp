@@ -1,3 +1,4 @@
+#policy, pool, and profile configuration
 class ucsm_dockerdc::profile::ucsm_config{
   # shared infrastructure pools and policies
 

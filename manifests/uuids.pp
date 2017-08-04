@@ -1,3 +1,4 @@
+# server uuid pool configuration
 class ucsm_dockerdc::uuids(
 $uuid_list=undef,
 ){
@@ -6,16 +7,16 @@ $uuid_list=undef,
     if ($uuid_list != undef) {
         $uuid_list.each |$uuid| {
             notify { "UUID ${uuid['name']}" :
-	        message => "from ${uuid['from']}, to ${uuid['to']}"
+                message => "from ${uuid['from']}, to ${uuid['to']}"
             }
             ucsm_uuid_pool{"UUID ${uuid['name']}":
-                policy_name => "${uuid['name']}",
-                to => "${uuid['to']}",
-                r_from => "${uuid['from']}",
-	        ip => "${ucsm_dockerdc::login_info['ip']}",
-	        username => "${ucsm_dockerdc::login_info['username']}",
-	        password => "${ucsm_dockerdc::login_info['password']}",
-	        state => 'present',
+                policy_name => $uuid['name'],
+                to          => $uuid['to'],
+                r_from      => $uuid['from'],
+                ip          => $ucsm_dockerdc::login_info['ip'],
+                username    => $ucsm_dockerdc::login_info['username'],
+                password    => $ucsm_dockerdc::login_info['password'],
+                state       => 'present',
             }
         }
     }
