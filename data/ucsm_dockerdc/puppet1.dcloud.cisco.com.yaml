@@ -8,8 +8,8 @@ ucsm_dockerdc::login_info:
 #vlan configuration data
 ucsm_dockerdc::vlans::vlan_list:
   - name: vlan244
-    id: 244
-    native: false
+    id: "244"
+    native: "false"
   
 #mac address pool
 ucsm_dockerdc::macs::mac_list:
@@ -23,9 +23,9 @@ ucsm_dockerdc::vnic_templates::vnic_list:
     fabric: A
     vlan_list:
     - vlan_name: UCS_Data_10
-      native: true
+      native: "true"
     cdn_name: eth0
-    mtu: 1500
+    mtu: "1500"
     mac_pool: Docker
       
 #bios policy
@@ -37,11 +37,11 @@ ucsm_dockerdc::boot_policy::boot_policy_name: Docker-LocalBoot
 ucsm_dockerdc::boot_policy::boot_device_list:
   - type: LAN
     device_name: eth0
-    order: 1
+    order: "1"
 
   - type: LocalLun
     device_name: Boot-Lun
-    order: 2
+    order: "2"
 
 #server uuid pool
 ucsm_dockerdc::uuids::uuid_list:
@@ -54,27 +54,27 @@ ucsm_dockerdc::uuids::uuid_list:
 ucsm_dockerdc::server_pools::server_pool_list:
   - name: Docker-DTR
     server_list:
-    - slot_id: 1
-      chassis_id: 1
+    - slot_id: "1"
+      chassis_id: "1"
 
-    - slot_id: 2
-      chassis_id: 1
+    - slot_id: "2"
+      chassis_id: "1"
 
   - name: Docker-Ctrl
     server_list:
-    - slot_id: 3
-      chassis_id: 1
+    - slot_id: "3"
+      chassis_id: "1"
 
-    - slot_id: 4
-      chassis_id: 1
+    - slot_id: "4"
+      chassis_id: "1"
 
   - name: Docker-Node
     server_list:
-    - slot_id: 5
-      chassis_id: 1
+    - slot_id: "5"
+      chassis_id: "1"
 
-    - slot_id: 6
-      chassis_id: 1
+    - slot_id: "6"
+      chassis_id: "1"
 
 # disk configuration policy
 ucsm_dockerdc::disk_group_policy::disk_group_policy_list:
@@ -87,11 +87,11 @@ ucsm_dockerdc::storage_profile::storage_profile_list:
   - name: Docker-StgProf
     lun_list:
     - lun_name: Boot-Lun
-      size: 60
+      size: "60"
       disk_group_policy: Docker-DG
 
     - lun_name: Data-Lun
-      size: 200
+      size: "200"
       disk_group_policy: Docker-DG
 
 #service profile templates
@@ -104,7 +104,7 @@ ucsm_dockerdc::service_profile_templates::service_profile_template_list:
     - vnic_name: eth0
       vnic_template: Docker-eth0
       vnic_adapter_policy: Linux
-      vnic_order: 1
+      vnic_order: "1"
     boot_policy: Docker-LocalBoot
     server_pool: Docker-DTR
     host_fw_package: default
@@ -118,7 +118,7 @@ ucsm_dockerdc::service_profile_templates::service_profile_template_list:
     - vnic_name: eth0
       vnic_template: Docker-eth0
       vnic_adapter_policy: Linux
-      vnic_order: 1
+      vnic_order: "1"
     boot_policy: Docker-LocalBoot
     server_pool: Docker-Ctrl
     host_fw_package: default
@@ -132,7 +132,7 @@ ucsm_dockerdc::service_profile_templates::service_profile_template_list:
     - vnic_name: eth0
       vnic_template: Docker-eth0
       vnic_adapter_policy: Linux
-      vnic_order: 1
+      vnic_order: "1"
     boot_policy: Docker-LocalBoot
     server_pool: Docker-Node
     host_fw_package: default
