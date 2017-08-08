@@ -138,3 +138,24 @@ ucsm_dockerdc::service_profile_templates::service_profile_template_list:
     host_fw_package: default
     bios_policy: Docker-BiosPol
 
+#service profile instances
+ucsm_dockerdc::service_profiles::service_profile_list:
+  - name: DDC-DTR-1
+    src_templ_name: Docker-DTR
+
+  - name: DDC-DTR-2
+    src_templ_name: Docker-DTR
+
+  - name: UCP-Ctrl-1
+    src_templ_name: Docker-UCP-Ctrl
+
+  - name: UCP-Ctrl-2
+    src_templ_name: Docker-UCP-Ctrl
+
+  - name: UCP-Node-1
+    src_templ_name: Docker-UCP-Node
+
+  - name: UCP-Node-2
+    src_templ_name: Docker-UCP-Node
+
+

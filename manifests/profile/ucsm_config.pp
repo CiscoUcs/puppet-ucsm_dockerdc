@@ -30,4 +30,7 @@ class ucsm_dockerdc::profile::ucsm_config{
   # Creating Service Profile Templates
   include ::ucsm_dockerdc::service_profile_templates
 
+  # Creating Service Profile Instances
+  include ::ucsm_dockerdc::service_profiles
+
 }
