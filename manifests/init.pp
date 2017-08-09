@@ -45,5 +45,25 @@
 class ucsm_dockerdc (
   $login_info=undef,
 ) {
+  if $::osfamily == 'RedHat' {
 
+    package { 'epel-release' :
+      ensure => 'present',
+      name   => 'epel-release',
+    }
+
+    package { 'python-pip' :
+      ensure  => 'present',
+      name    => 'python-pip',
+      require => Package['epel-release'],
+    }
+
+    package { 'ucsmsdk' :
+      ensure   => 'present',
+      name     => 'ucsmsdk',
+      provider => 'pip',
+      require  => Package['python-pip'],
+    }
+
+  }
 }

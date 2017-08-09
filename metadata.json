@@ -1,6 +1,6 @@
 {
   "name": "ciscoucs-ucsm_dockerdc",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": "Cisco Systems, Inc",
   "summary": "Deployment module for Cisco UCSM with Docker Datacenter.",
   "license": "Apache-2.0",
