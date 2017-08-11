@@ -7,8 +7,8 @@ ucsm_dockerdc::login_info:
 
 #vlan configuration data
 ucsm_dockerdc::vlans::vlan_list:
-  - name: vlan244
-    id: "244"
+  - name: UCS_Data_10
+    id: "10"
     native: "false"
   
 #mac address pool
